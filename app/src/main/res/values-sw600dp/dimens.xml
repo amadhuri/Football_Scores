@@ -8,5 +8,8 @@
         <dimen name="TeamNames">17sp</dimen>
         <dimen name="Score">30sp</dimen>
         <dimen name="League">15sp</dimen>
+        <dimen name="no_matches">17sp</dimen>
+        <dimen name="svg_image_width">72dp</dimen>
+        <dimen name="svg_image_height">72dp</dimen>
     </resources>
 

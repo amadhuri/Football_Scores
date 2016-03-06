@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="4dp"
+    android:padding="@dimen/widget_margin"
+    android:id="@+id/score_widget"
+    android:background="#F5F1E5"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/widget_icon"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today's Soccer Matches"
+            android:layout_toRightOf="@id/widget_icon"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/widget_title"
+            android:textColor="#3e3d3d"/>
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id = "@+id/lv_widget_scores_list"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="15sp"
+        android:background="#993300"/>
+    <TextView
+        android:id="@+id/tv_widget_emptyview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#ffffff"
+        android:text="@string/no_matches"
+        android:textSize="14sp"
+        android:background="@drawable/list_item"
+        android:padding="5dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/details_fragment_container">
+    </FrameLayout>
+</LinearLayout>
+
+

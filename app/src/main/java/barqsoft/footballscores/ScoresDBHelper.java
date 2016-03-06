@@ -12,7 +12,8 @@ import barqsoft.footballscores.DatabaseContract.scores_table;
 public class ScoresDBHelper extends SQLiteOpenHelper
 {
     public static final String DATABASE_NAME = "Scores.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 7;
+
     public ScoresDBHelper(Context context)
     {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -32,9 +33,27 @@ public class ScoresDBHelper extends SQLiteOpenHelper
                 + scores_table.AWAY_GOALS_COL + " TEXT NOT NULL,"
                 + scores_table.MATCH_ID + " INTEGER NOT NULL,"
                 + scores_table.MATCH_DAY + " INTEGER NOT NULL,"
+                + scores_table.HOME_ID_COL + " INTEGER NOT NULL,"
+                + scores_table.AWAY_ID_COL + " INTEGER NOT NULL,"
                 + " UNIQUE ("+scores_table.MATCH_ID+") ON CONFLICT REPLACE"
                 + " );";
         db.execSQL(CreateScoresTable);
+
+        final String CreateLeagueTable = "CREATE TABLE " + DatabaseContract.LEAGUE_TABLE + " ("
+                + DatabaseContract.league_table._ID+ " INTEGER PRIMARY KEY,"
+                + DatabaseContract.league_table.LEAGUE_ID_COL + " INTEGER NOT NULL,"
+                + DatabaseContract.league_table.LEAGUE_NAME_COL + " TEXT NOT NULL,"
+                + " UNIQUE ("+DatabaseContract.league_table.LEAGUE_ID_COL+") ON CONFLICT REPLACE"
+                + " );";
+        db.execSQL(CreateLeagueTable);
+
+        final String CreateTeamTable = "CREATE TABLE " + DatabaseContract.TEAM_TABLE + " ("
+                + DatabaseContract.team_table._ID + " INTEGER PRIMARY KEY,"
+                + DatabaseContract.team_table.TEAM_ID_COL + " INTEGER NOT NULL,"
+                + DatabaseContract.team_table.TEAM_LOGO_COL + " TEXT NOT NULL,"
+                + " UNIQUE ("+DatabaseContract.team_table.TEAM_ID_COL + ") ON CONFLICT REPLACE"
+                + " );";
+        db.execSQL(CreateTeamTable);
     }
 
     @Override
@@ -42,5 +61,7 @@ public class ScoresDBHelper extends SQLiteOpenHelper
     {
         //Remove old values when upgrading.
         db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.SCORES_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.LEAGUE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.TEAM_TABLE);
     }
 }

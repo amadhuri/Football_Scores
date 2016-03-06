@@ -12,9 +12,9 @@
             android:gravity="center"
             android:layout_weight="1"
             android:text="@string/test_text"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/League"
-            android:id="@+id/league_textview"/>
+            android:id="@+id/detail_league_textview"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,23 +22,25 @@
             android:layout_weight="1"
             android:text="@string/test_text"
             android:textSize="@dimen/League"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:id="@+id/matchday_textview"/>
     </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
-        <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/share_text"
-        android:id="@+id/share_button"
-        android:drawableLeft="@android:drawable/ic_menu_share"
-        android:paddingLeft="120dp"
-        android:paddingRight="120dp"/>
+            <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Share"
+            android:id="@+id/share_button"
+            android:drawableLeft="@android:drawable/ic_menu_share"
+            android:paddingLeft="120dp"
+            android:paddingRight="120dp"
+                android:background="#352929"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/abc_text_size_button_material" />
     </FrameLayout>
 
 </LinearLayout>

@@ -1,5 +1,7 @@
 package barqsoft.footballscores;
 
+import android.util.Log;
+
 /**
  * Created by yehya khaled on 3/3/2015.
  */
@@ -10,16 +12,26 @@ public class Utilies
     public static final int CHAMPIONS_LEAGUE = 362;
     public static final int PRIMERA_DIVISION = 358;
     public static final int BUNDESLIGA = 351;
+    public static final int LIGUE_2=397;
+    public static final int PREMIER_LEAGUE2 = 398;
+    public static final int PRIMERA_DIV = 399;
+    public static final int SERIES_A = 401;
+    private static final String TAG = Utilies.class.getSimpleName();
+
     public static String getLeague(int league_num)
     {
         switch (league_num)
         {
-            case SERIE_A : return "Seria A";
+            case SERIE_A :
+            case SERIES_A :  return "Seria A";
             case PREMIER_LEGAUE : return "Premier League";
             case CHAMPIONS_LEAGUE : return "UEFA Champions League";
             case PRIMERA_DIVISION : return "Primera Division";
             case BUNDESLIGA : return "Bundesliga";
-            default: return "Not known League Please report";
+            case LIGUE_2 : return "Ligue 2";
+            case PREMIER_LEAGUE2 : return "Premier League";
+            case PRIMERA_DIV : return "Primera Division";
+            default: return String.format("League:"+league_num);
         }
     }
     public static String getMatchDay(int match_day,int league_num)
@@ -68,9 +80,11 @@ public class Utilies
     public static int getTeamCrestByTeamName (String teamname)
     {
         if (teamname==null){return R.drawable.no_icon;}
+        Log.d(TAG,"getTeamCrestByTeamName:"+teamname);
         switch (teamname)
         { //This is the set of icons that are currently in the app. Feel free to find and add more
             //as you go.
+
             case "Arsenal London FC" : return R.drawable.arsenal;
             case "Manchester United FC" : return R.drawable.manchester_united;
             case "Swansea City" : return R.drawable.swansea_city_afc;
@@ -81,7 +95,24 @@ public class Utilies
             case "West Bromwich Albion" : return R.drawable.west_bromwich_albion_hd_logo;
             case "Sunderland AFC" : return R.drawable.sunderland;
             case "Stoke City FC" : return R.drawable.stoke_city;
+            case "Udinese Calcio" : return R.drawable.udinese_calcio;
+            case "Valencia CF" : return R.drawable.valenciacf;
+            case "Rayo Vallecano de Madrid": return R.drawable.rayo_vallecano_logo;
+            case "Fortuna Düsseldorf" : return R.drawable.fortuna_dusseldorf;
+            case "Karlsruher SC" : return R.drawable.ksc;
             default: return R.drawable.no_icon;
+        }
+    }
+
+    public static String getFileExtension(String fileName) {
+        try {
+            //fileName = "mad.png";
+            int index = fileName.lastIndexOf(".");
+            String ext = fileName.substring(index+1);
+            return ext;
+        } catch (Exception e) {
+            Log.d(TAG,"getFileExtension exception :"+e.getMessage() );
+            return "";
         }
     }
 }

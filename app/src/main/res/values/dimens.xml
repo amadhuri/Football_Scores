@@ -4,7 +4,13 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="list_horizonal_matgin">2dp</dimen>
     <dimen name="share_button_margin">150dp</dimen>
-    <dimen name="TeamNames">17sp</dimen>
-    <dimen name="Score">30sp</dimen>
-    <dimen name="League">15sp</dimen>
+    <dimen name="TeamNames">12sp</dimen>
+    <dimen name="Score">24sp</dimen>
+    <dimen name="League">14sp</dimen>
+    <dimen name="widget_margin">8dp</dimen>
+    <dimen name="widget_title">18sp</dimen>
+    <dimen name="widget_score">14sp</dimen>
+    <dimen name="widget_time">10sp</dimen>
+    <dimen name="svg_image_width">44dp</dimen>
+    <dimen name="svg_image_height">44dp</dimen>
 </resources>
