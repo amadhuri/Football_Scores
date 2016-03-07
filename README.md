@@ -24,6 +24,7 @@ The following **required** functionality is completed:
 * [O] For the finished matches users can see the scores.
 * [O] User can share match information.
 * [O] User can create homescreen widget and can see all the matches scheduled for the current day.
+* [O] Layout mirroring is supported.
 
 
 ## Video Walkthrough 
